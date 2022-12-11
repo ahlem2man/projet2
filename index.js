@@ -1,15 +1,13 @@
-const express = require('express')
-const server = express()
+const express = require("express");
+const app = express();
+const port = process.env.PORT || 3001;
 
-server.use((req, res) => {
-  res.send('Hello World!')
-})
+app.get("/", (req, res) => res.type('html').send(html));
 
-const PORT = process.env.PORT || 3000
-server.listen(PORT, () => {
-  console.log('Server listening on http://localhost:' + PORT)
-})
+app.listen(port, () => console.log(Example app listening on port ${port}!));
 
+
+const html = `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
